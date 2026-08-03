@@ -1,0 +1,293 @@
+/* ================================
+   BERUFE QUIZ - ALPHA 1.0
+   ================================ */
+
+:root{
+    --primary:#154590;
+    --success:#2D9359;
+    --danger:#C61932;
+    --accent:#F18725;
+
+    --background:#ffffff;
+    --card:#ffffff;
+    --text:#222;
+    --shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--background);
+    color:var(--text);
+    min-height:100vh;
+}
+
+/* HEADER */
+
+.header{
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 40px;
+    border-bottom:4px solid var(--primary);
+}
+
+.logos{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.logos img{
+    height:55px;
+}
+
+/* TITEL */
+
+.titleArea{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.titleArea h1{
+    font-size:46px;
+    letter-spacing:2px;
+}
+
+/* START */
+
+.startCard{
+
+    width:900px;
+    margin:70px auto;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    padding:60px;
+
+    text-align:center;
+
+}
+
+.startCard h2{
+
+    font-size:42px;
+    margin-bottom:20px;
+
+}
+
+.startCard p{
+
+    font-size:24px;
+    margin-bottom:40px;
+
+}
+
+.startCard button{
+
+    background:var(--primary);
+    color:white;
+
+    border:none;
+
+    padding:18px 45px;
+
+    border-radius:12px;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+}
+
+.startCard button:hover{
+
+    background:#0e3774;
+
+}
+
+/* QUIZ */
+
+.hidden{
+
+    display:none;
+
+}
+
+.questionCard{
+
+    width:1500px;
+
+    margin:40px auto;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:45px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.questionHeader{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+#question{
+
+    font-size:42px;
+
+    margin-bottom:40px;
+
+}
+
+.answers{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.answers button{
+
+    background:#edf3ff;
+
+    border:none;
+
+    border-radius:16px;
+
+    padding:25px;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.answers button:hover{
+
+    transform:scale(1.02);
+
+}
+
+/* Moderator */
+
+.menuButton{
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+#moderatorPanel{
+
+    position:fixed;
+
+    top:0;
+
+    right:-380px;
+
+    width:360px;
+
+    height:100vh;
+
+    background:white;
+
+    box-shadow:-8px 0 20px rgba(0,0,0,.15);
+
+    transition:.35s;
+
+    padding:30px;
+
+    z-index:100;
+
+}
+
+#moderatorPanel.open{
+
+    right:0;
+
+}
+
+.panelHeader{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:30px;
+
+}
+
+#moderatorPanel button{
+
+    width:100%;
+
+    margin-bottom:15px;
+
+    padding:18px;
+
+    font-size:18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+#overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    display:none;
+
+}
+
+#overlay.show{
+
+    display:block;
+
+}
