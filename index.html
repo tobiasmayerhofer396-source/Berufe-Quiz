@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berufe Quiz</title>
+
+    <!-- Schriftart -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logos">
+
+            <img src="assets/logos/ams.png" alt="AMS">
+
+            <img src="assets/logos/noe.png" alt="Niederösterreich">
+
+            <img src="assets/logos/eu.png" alt="EU">
+
+            <img src="assets/logos/weidinger.png" alt="Weidinger & Partner">
+
+        </div>
+
+        <button id="menuButton" class="menuButton">
+            ☰ Moderator
+        </button>
+
+    </header>
+
+    <!-- TITEL -->
+
+    <section class="titleArea">
+
+        <h1>BERUFE QUIZ</h1>
+
+    </section>
+
+    <!-- STARTSEITE -->
+
+    <section id="startScreen">
+
+        <div class="startCard">
+
+            <h2>Willkommen!</h2>
+
+            <p>
+                Bereit für das Berufe Quiz?
+            </p>
+
+            <button id="startQuiz">
+                Quiz starten
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- QUIZ -->
+
+    <main id="quizScreen" class="hidden">
+
+        <div class="questionCard">
+
+            <div class="questionHeader">
+
+                <span id="questionCounter">
+                    Frage 1 von 1
+                </span>
+
+            </div>
+
+            <h2 id="question">
+                Was macht ein Polizist?
+            </h2>
+
+            <div id="answers" class="answers">
+
+                <!-- Wird per JavaScript erzeugt -->
+
+            </div>
+
+            <button id="nextQuestion" class="nextButton">
+                Nächste Frage
+            </button>
+
+        </div>
+
+    </main>
+
+    <!-- MODERATOR MENÜ -->
+
+    <aside id="moderatorPanel">
+
+        <div class="panelHeader">
+
+            <h2>Moderator</h2>
+
+            <button id="closePanel">
+                ✕
+            </button>
+
+        </div>
+
+        <button id="fullscreen">
+            🖥 Vollbild
+        </button>
+
+        <button id="showSolution">
+            ✅ Richtige Antwort zeigen
+        </button>
+
+        <button id="restartQuiz">
+            🔄 Quiz neu starten
+        </button>
+
+        <button id="loadQuiz">
+            📂 Fragen laden
+        </button>
+
+        <button id="settings">
+            ⚙ Einstellungen
+        </button>
+
+    </aside>
+
+    <!-- Hintergrund -->
+
+    <div id="overlay"></div>
+
+    <!-- JavaScript -->
+
+    <script src="js/app.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/moderator.js"></script>
+
+</body>
+</html>
