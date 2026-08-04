@@ -6,7 +6,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // Elemente
-    const startButton = document.getElementById("startQuiz");
+    const startButton = document.getElementById("startButton");
     const startScreen = document.getElementById("startScreen");
     const quizScreen = document.getElementById("quizScreen");
 
