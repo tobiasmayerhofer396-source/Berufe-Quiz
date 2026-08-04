@@ -24,8 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (startButton) {
         startButton.addEventListener("click", () => {
 
-            startScreen.classList.add("hidden");
-            quizScreen.classList.remove("hidden");
+          startScreen.classList.add("hidden");
+quizScreen.classList.remove("hidden");
+
+loadQuestion();
 
         });
     }
