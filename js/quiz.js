@@ -1,98 +1,38 @@
-// =======================================
-// Berufe Quiz - Alpha 1.0
-// quiz.js
-// =======================================
+const questions = [
 
-const quizData = [
-    {
-        frage: "Was macht ein Polizist?",
+{
+    question:"Arbeitest du gerne mit Menschen?",
 
-        antworten: [
-            "Brände löschen",
-            "Für Sicherheit sorgen",
-            "Kranke behandeln",
-            "Häuser bauen"
-        ],
+    answers:[
 
-        richtig: 1
-    }
+        "Ja",
+        "Nein"
+
+    ]
+}
+
 ];
 
-let aktuelleFrage = 0;
+function loadQuestion(){
 
-const frageElement = document.getElementById("question");
-const antwortenElement = document.getElementById("answers");
-const frageCounter = document.getElementById("questionCounter");
-const nextButton = document.getElementById("nextQuestion");
+    const question = document.getElementById("question");
+    const answers = document.getElementById("answers");
 
-function ladeFrage() {
+    question.textContent = questions[0].question;
 
-    const frage = quizData[aktuelleFrage];
+    answers.innerHTML="";
 
-    frageCounter.textContent =
-        `Frage ${aktuelleFrage + 1} von ${quizData.length}`;
+    questions[0].answers.forEach(answer=>{
 
-    frageElement.textContent = frage.frage;
+        const button=document.createElement("button");
 
-    antwortenElement.innerHTML = "";
+        button.textContent=answer;
 
-    frage.antworten.forEach((antwort, index) => {
+        answers.appendChild(button);
 
-        const button = document.createElement("button");
-
-        button.textContent = antwort;
-
-        button.onclick = () => pruefeAntwort(index, button);
-
-        antwortenElement.appendChild(button);
+        answers.appendChild(document.createElement("br"));
+        answers.appendChild(document.createElement("br"));
 
     });
 
 }
-
-function pruefeAntwort(index, button) {
-
-    const frage = quizData[aktuelleFrage];
-
-    const buttons = antwortenElement.querySelectorAll("button");
-
-    buttons.forEach(btn => btn.disabled = true);
-
-    if (index === frage.richtig) {
-
-        button.style.background = "#2D9359";
-        button.style.color = "white";
-
-    } else {
-
-        button.style.background = "#C61932";
-        button.style.color = "white";
-
-        buttons[frage.richtig].style.background = "#2D9359";
-        buttons[frage.richtig].style.color = "white";
-
-    }
-
-}
-
-if (nextButton) {
-
-    nextButton.addEventListener("click", () => {
-
-        aktuelleFrage++;
-
-        if (aktuelleFrage >= quizData.length) {
-
-            alert("Quiz beendet!");
-
-            aktuelleFrage = 0;
-
-        }
-
-        ladeFrage();
-
-    });
-
-}
-
-document.addEventListener("DOMContentLoaded", ladeFrage);
