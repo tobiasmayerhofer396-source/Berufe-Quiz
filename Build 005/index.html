@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AMS Berufe-Quiz | Build 005</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ===================================== -->
+    <!-- HINTERGRUND -->
+    <!-- ===================================== -->
+
+    <div class="background"></div>
+
+
+    <!-- ===================================== -->
+    <!-- STARTBILDSCHIRM -->
+    <!-- ===================================== -->
+
+    <section
+        id="startScreen"
+        class="screen active"
+    >
+
+        <div class="logo">
+
+            <h1>
+                🎯 AMS BERUFE-QUIZ
+            </h1>
+
+            <p>
+                Testen Sie Ihr Wissen über Berufe
+            </p>
+
+        </div>
+
+
+        <!-- ================================= -->
+        <!-- ODT IMPORT -->
+        <!-- ================================= -->
+
+        <div class="importBox">
+
+            <h3>
+                Fragen laden
+            </h3>
+
+            <p>
+                Wählen Sie Ihre vorbereitete
+                ODT-Datei aus.
+            </p>
+
+            <label
+                for="odtFile"
+                class="primaryButton"
+            >
+                📂 ODT-Datei auswählen
+            </label>
+
+            <input
+                type="file"
+                id="odtFile"
+                accept=".odt"
+                hidden
+            >
+
+            <div id="importStatus">
+                Noch keine Fragen geladen.
+            </div>
+
+        </div>
+
+
+        <!-- ================================= -->
+        <!-- START -->
+        <!-- ================================= -->
+
+        <button
+            id="startButton"
+            class="primaryButton"
+        >
+
+            Quiz starten
+
+        </button>
+
+    </section>
+
+
+    <!-- ===================================== -->
+    <!-- QUIZ -->
+    <!-- ===================================== -->
+
+    <section
+        id="quizScreen"
+        class="screen hidden"
+    >
+
+
+        <!-- ================================= -->
+        <!-- KOPF -->
+        <!-- ================================= -->
+
+        <div class="topBar">
+
+            <div id="questionCounter">
+
+                Frage 1 / 10
+
+            </div>
+
+
+            <div id="scoreDisplay">
+
+                💰 0 Punkte
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================= -->
+        <!-- FRAGE -->
+        <!-- ================================= -->
+
+        <div class="questionCard">
+
+            <h2 id="question">
+
+                Frage wird geladen...
+
+            </h2>
+
+        </div>
+
+
+        <!-- ================================= -->
+        <!-- ANTWORTEN -->
+        <!-- ================================= -->
+
+        <div
+            id="answers"
+            class="answersGrid"
+        >
+
+        </div>
+
+
+        <!-- ================================= -->
+        <!-- FORTSCHRITT -->
+        <!-- ================================= -->
+
+        <div class="progressWrapper">
+
+            <div id="progressBar"></div>
+
+        </div>
+
+
+        <!-- ================================= -->
+        <!-- MODERATORLEISTE -->
+        <!-- ================================= -->
+
+        <div class="moderatorBar">
+
+
+            <button id="backQuestion">
+
+                ◀ Zurück
+
+            </button>
+
+
+            <button id="timerButton">
+
+                ⏱ Timer
+
+            </button>
+
+
+            <button
+                id="nextQuestion"
+                disabled
+            >
+
+                ▶ Weiter
+
+            </button>
+
+
+            <button id="endQuiz">
+
+                🏁 Ende
+
+            </button>
+
+
+        </div>
+
+
+        <!-- ================================= -->
+        <!-- TIMER -->
+        <!-- ================================= -->
+
+        <div
+            id="timerOverlay"
+            class="timerOverlay"
+        >
+
+            <div class="timerBox">
+
+                <div class="timerIcon">
+
+                    ⏱
+
+                </div>
+
+
+                <div id="timerValue">
+
+                    30
+
+                </div>
+
+
+                <div class="timerText">
+
+                    Noch Zeit
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================== -->
+    <!-- ERGEBNIS -->
+    <!-- ===================================== -->
+
+    <section
+        id="resultScreen"
+        class="screen hidden"
+    >
+
+        <div class="resultCard">
+
+
+            <!-- ================================= -->
+            <!-- TITEL -->
+            <!-- ================================= -->
+
+            <h1>
+
+                🏆 Quiz beendet!
+
+            </h1>
+
+
+            <!-- ================================= -->
+            <!-- PUNKTE -->
+            <!-- ================================= -->
+
+            <div id="finalScore">
+
+                0 Punkte
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- RICHTIGE ANTWORTEN -->
+            <!-- ================================= -->
+
+            <p id="finalResult">
+
+                0 von 0 Fragen richtig
+
+            </p>
+
+
+            <!-- ================================= -->
+            <!-- PROZENT -->
+            <!-- ================================= -->
+
+            <div
+                id="finalPercentage"
+                class="finalPercentage"
+            >
+
+                0 %
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- ERGEBNIS-FORTSCHRITTSBALKEN -->
+            <!-- ================================= -->
+
+            <div
+                class="resultProgressWrapper"
+            >
+
+                <div
+                    id="resultProgressBar"
+                    class="resultProgressBar"
+                ></div>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- BEWERTUNG -->
+            <!-- ================================= -->
+
+            <div
+                id="resultMessage"
+                class="resultMessage"
+            >
+
+                Vielen Dank für Ihre Teilnahme!
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- ABSCHLUSSTEXT -->
+            <!-- ================================= -->
+
+            <p class="resultThanks">
+
+                Vielen Dank für Ihre Teilnahme!
+
+            </p>
+
+
+            <!-- ================================= -->
+            <!-- NEUES QUIZ -->
+            <!-- ================================= -->
+
+            <button
+                id="restartQuiz"
+                class="primaryButton"
+            >
+
+                Neues Quiz starten
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ===================================== -->
+
+    <script src="js/jszip.min.js"></script>
+
+    <script src="js/odt-import.js"></script>
+
+    <script src="js/quiz.js"></script>
+
+    <script src="js/app.js"></script>
+
+
+</body>
+
+</html>
